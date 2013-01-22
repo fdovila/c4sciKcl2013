@@ -1,0 +1,57 @@
+C for Science -Practical Exercise #1 
+1. Type in the following program: #include <stdio.h> 
+int main(void) 
+{ 
+printf("Hello World!"); 
+return 0; 
+} 
+Compile and run it. (a) Replace the space between "Hello and World!" in turn with each of the 7 characters: \n, \t, \b, \f, \\, \" and \Õ. For each case, re-compile and run the program. What happens? 2. Type in the following program: #include <stdio.h> 
+int main(void) 
+{ 
+int i1=1, i2=2222, i3=333333333; 
+float x1=1.0, x2=3.1415926, x3 = -1.e-10; 
+printf("i1, i2, i3 = %d %d %d\n", i1, i2, i3); 
+printf("x1, x2, x3 = %f %f %f\n", x1, x2, x3); 
+return 0; 
+} Compile and run it. How does the output di¥¥er to what is expected? What do you notice when making the following changes: (a) Change %d %d%d in line 6 to %6d %6d %6d. (b) Change %f %f%f in line 7 to %e%e %e. (c) Change %f %f%f in line 7 to %g%g %g. (d) Change 	%f%f %f in line 7 to %10.2g %10.4g %10.6g (A warning: the exact output generated from the format descriptor %g can vary from compiler to compiler!) 3. Integer Arithmetic: Type in the following program: #include <stdio.h> 
+int main(void) 
+{ 
+short i1=11, i2=22, i3, i4, i5, i6; 
+i3 = i1 + i2; 
+i4 = i1 * i2; 
+i5 = i1 / i2; 
+i6 = i2 / i1; 
+printf("i3 to i6 = %d %d %d %d\n", i3, i4, i5, i6); 
+return 0; 
+} Compile and run it. If you change line 4 such that i1=11111 and i2=22222, does the program produce what you expect? (Hint: what is 33333 ¥ 216)? 1 
+4. Floating Point Arithmetic: Type in the following program: #include <stdio.h> 
+int main(void) 
+{ 
+float x1=1.0e5, x2=3.1415926, x3, x4, x5, x6; 
+x3 = x1 + x2; 
+x4 = x1 * x2; 
+x5 = x1 / x2; 
+x6 = x2 / x1; 
+printf("x3 -x6 = %f %f %f %f\n", x3, x4, x5, x6); 
+return 0; 
+} Compile and run it. (a) Change line 4 such that x1=1.0e25 and x2=3.0e10. Does this give the result you expect? (b) Change the operator in line 5 such that x3=x1 % x2, why does this not compile? (In C % is the modulo operator). 5. Type in the following program: #include <stdio.h> 
+int main(void) 
+{ 
+int low = -40, high = 140, step = 5, f, c = low; 
+while (c <= high) 
+{ 
+f = 32+9*c/5; 
+printf("%6d \t %6d\n", c, f); 
+c= c+step; 
+} 
+return 0; 
+} 
+Compile and run it. Edit the program so that it calculated f correctly for c ranging from -40 to 140 in steps of 2. (What type do the numbers have to be?). Amend the printf so that no decimal places are printed for c and one decimal place is printed for the values of f. Add a line of code to print a heading at the beginning of the printed table. 6. The code fragment #include <stdio.h> 
+int main(void) 
+{ 
+double a0, a1; 
+printf("Enter coefficients of Linear Equation a1*x + a0 = 0\n" 
+"in the order a1, a0, separated by spaces:"); 
+scanf("%lf %lf", &a1, &a0); 
+} 
+will prompt the user for two numbers and read them into the variables a1 and a0. Finish the program by adding code to solve the linear equation and display the result on screen. Ensure that the case a1 == 0.0 is dealt with properly. 2 
